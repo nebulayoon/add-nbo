@@ -4,10 +4,12 @@ TARGET=add-nbo
 
 all: $(TARGET)
 
-$(TARGET): add-nbo.o
-	g++ -o $(TARGET) add-nbo.o
+$(TARGET): util.o add-nbo.o
+	g++ -o $(TARGET) util.o add-nbo.o
 
 add-nbo.o: add-nbo.cpp
+
+util.o: util.cpp
 
 clean:
 	rm -f $(TARGET)
